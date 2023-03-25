@@ -1,0 +1,134 @@
+.about-content__wrapper {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  border-top: 2px solid white;
+}
+
+.section--about,
+.about-content__wrapper {
+  background-color: $clr-bg--primary;
+}
+
+.section--about,
+.about-content__image {
+  width: 100%;
+}
+
+.about-content__image {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.85)),
+    url("../images/about_image.jpg");
+  background-size: cover;
+  clip-path: polygon(
+    0% 0%,
+    0% 100%,
+    95% 100%,
+    100% 83%,
+    80% 71%,
+    92% 53%,
+    78% 30%,
+    80% 31%,
+    95% 15%,
+    85% 0%
+  );
+}
+
+.section--about {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  gap: 5rem;
+  padding: 2rem 3rem;
+
+  h2 {
+    font-size: 5.5rem;
+    font-weight: 300;
+  }
+}
+
+.about-cards__wrapper {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 1.5rem;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  text-align: center;
+  gap: 1em;
+  font-size: 1.375rem;
+  padding: 2em 1em;
+  border: 1px solid $clr-text--secondary;
+  border-radius: 5px;
+  box-shadow: 0 3px 6px 1px black;
+  transition: 250ms ease-in-out;
+
+  span {
+    font-size: 3em;
+  }
+}
+
+.card:nth-child(2) {
+  span {
+    font-size: 3.75em;
+  }
+}
+
+.card:hover {
+  transform: translateY(-5px);
+}
+
+.our-mission__container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  text-align: center;
+
+  p {
+    font-size: 1.375rem;
+  }
+}
+
+.mission-heading__container {
+  display: flex;
+  font-size: 1.5rem;
+
+  h3 {
+    font-size: 2em;
+    font-weight: 400;
+  }
+
+  span {
+    font-size: 2.25em;
+    font-weight: 600;
+  }
+}
+
+.about__scroll-button {
+  background-color: $clr-bg--dark;
+  color: $clr-text--primary;
+  font-size: 1.125rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  aspect-ratio: 3/1;
+  width: 175px;
+  border: 5px solid $clr-border--dark;
+  cursor: pointer;
+  transition: 250ms;
+}
+
+.about__scroll-button:hover {
+  background-color: $clr-bg--light;
+  color: $clr-text--secondary;
+}
+
+.about__scroll-button:active {
+  transform: scale(0.95);
+  transition: 150ms;
+}
