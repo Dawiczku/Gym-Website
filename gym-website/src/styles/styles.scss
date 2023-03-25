@@ -1,0 +1,63 @@
+@import url("https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=Righteous&family=Ubuntu&display=swap");
+@import "./main";
+// @import "./about";
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  font-family: "Ubuntu", sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+.text-clr--primary {
+  color: $clr-text--primary;
+}
+
+.text-clr--secondary {
+  color: $clr-text--secondary;
+}
+
+.text--upper {
+  text-transform: uppercase;
+}
+
+.font--slab {
+  font-family: "Alfa Slab One", cursive;
+  letter-spacing: 5px;
+}
+
+.font--righteous {
+  font-family: "Righteous", cursive;
+}
+
+.accent--clr {
+  color: $clr--accent;
+}
+
+.bg-clr--primary {
+  background-color: $clr-bg--primary;
+}
+
+.bg-clr--secondary {
+  background-color: $clr-bg--secondary;
+}
+
+.bg-clr--dark {
+  background-color: $clr-bg--dark;
+}
+
+ul {
+  list-style-type: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+  padding: 0;
+}

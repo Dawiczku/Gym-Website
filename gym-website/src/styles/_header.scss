@@ -1,0 +1,68 @@
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding: 1.25rem 3rem;
+  border-bottom: 1px solid white;
+}
+
+.logo__container {
+  display: flex;
+  align-items: center;
+  gap: 2em;
+}
+
+.logo__name,
+.logo {
+  font-size: 4.5rem;
+  background-image: linear-gradient(150deg, $clr--accent, rgb(94, 161, 32));
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.links {
+  display: flex;
+  align-items: center;
+  li {
+    position: relative;
+    margin: 0 1.5em;
+    font-size: 1.5rem;
+    font-weight: 600;
+  }
+
+  li:hover {
+    cursor: pointer;
+    color: white;
+  }
+
+  li:not(.login__link) {
+    padding: 0.25em 0;
+  }
+
+  li:not(.login__link)::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 5px;
+    background-color: $clr--accent;
+    transition: 250ms;
+  }
+
+  li:not(.login__link):hover::after {
+    width: 100%;
+  }
+
+  .login__link {
+    padding: 0.5em 1em;
+    border: 5px solid $clr--accent;
+    border-radius: 200px;
+    transition: 250ms;
+  }
+
+  .login__link:hover {
+    background-color: $clr--accent;
+  }
+}

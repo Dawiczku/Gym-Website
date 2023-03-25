@@ -1,1 +1,191 @@
-/*# sourceMappingURL=styles.css.map */
+@import url("https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=Righteous&family=Ubuntu&display=swap");
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding: 1.25rem 3rem;
+  border-bottom: 1px solid white;
+}
+
+.logo__container {
+  display: flex;
+  align-items: center;
+  gap: 2em;
+}
+
+.logo__name,
+.logo {
+  font-size: 4.5rem;
+  background-image: linear-gradient(150deg, rgb(154, 205, 50), rgb(94, 161, 32));
+  -webkit-background-clip: text;
+          background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.links {
+  display: flex;
+  align-items: center;
+}
+.links li {
+  position: relative;
+  margin: 0 1.5em;
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+.links li:hover {
+  cursor: pointer;
+  color: white;
+}
+.links li:not(.login__link) {
+  padding: 0.25em 0;
+}
+.links li:not(.login__link)::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 5px;
+  background-color: rgb(154, 205, 50);
+  transition: 250ms;
+}
+.links li:not(.login__link):hover::after {
+  width: 100%;
+}
+.links .login__link {
+  padding: 0.5em 1em;
+  border: 5px solid rgb(154, 205, 50);
+  border-radius: 200px;
+  transition: 250ms;
+}
+.links .login__link:hover {
+  background-color: rgb(154, 205, 50);
+}
+
+.section--main {
+  height: 100vh;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)), url("../images/main_image.jpg");
+  background-size: cover;
+  overflow: hidden;
+}
+
+.main-content__wrapper {
+  position: absolute;
+  left: 15%;
+  top: 35%;
+  width: 750px;
+}
+.main-content__wrapper p {
+  font-size: 1.5rem;
+  font-weight: 600;
+  line-height: 2.5rem;
+}
+
+.quote__main {
+  font-size: 4.25rem;
+  margin-bottom: 0.75rem;
+}
+
+.scroll__button {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 56px;
+  position: absolute;
+  top: 90%;
+  left: 50%;
+  right: 50%;
+  transform: translateX(-50%);
+  aspect-ratio: 1/1;
+  width: 3.5rem;
+  border-radius: 50%;
+  border: 3px solid rgb(154, 205, 50);
+  color: rgb(220, 220, 220);
+  background: transparent;
+  transition: 250ms;
+  overflow: hidden;
+}
+.scroll__button span {
+  font-size: 2.5em;
+  font-weight: 600;
+  transition: 350ms ease-in-out;
+}
+
+.arrow--lower {
+  margin-bottom: 0.2em;
+}
+
+.scroll__button:hover {
+  cursor: pointer;
+  box-shadow: 0 0 10px 2px rgb(154, 205, 50);
+}
+
+.scroll__button:hover .arrow--upper {
+  transform: translateY(90px);
+}
+
+.scroll__button:hover .arrow--lower {
+  transform: translateY(90px);
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  font-family: "Ubuntu", sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+.text-clr--primary {
+  color: rgb(220, 220, 220);
+}
+
+.text-clr--secondary {
+  color: rgb(30, 30, 30);
+}
+
+.text--upper {
+  text-transform: uppercase;
+}
+
+.font--slab {
+  font-family: "Alfa Slab One", cursive;
+  letter-spacing: 5px;
+}
+
+.font--righteous {
+  font-family: "Righteous", cursive;
+}
+
+.accent--clr {
+  color: rgb(154, 205, 50);
+}
+
+.bg-clr--primary {
+  background-color: rgb(140, 190, 38);
+}
+
+.bg-clr--secondary {
+  background-color: rgb(154, 205, 50);
+}
+
+.bg-clr--dark {
+  background-color: rgb(30, 30, 30);
+}
+
+ul {
+  list-style-type: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+  padding: 0;
+}/*# sourceMappingURL=styles.css.map */
