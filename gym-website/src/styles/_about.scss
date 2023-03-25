@@ -1,6 +1,7 @@
 .about-content__wrapper {
   display: flex;
   justify-content: center;
+  position: relative;
   border-top: 2px solid white;
 }
 
@@ -35,14 +36,13 @@
 .section--about {
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
   position: relative;
-  gap: 5rem;
   padding: 2rem 3rem;
 
   h2 {
-    font-size: 5.5rem;
+    font-size: 4.25vw;
     font-weight: 300;
   }
 }
@@ -56,12 +56,11 @@
 .about-card {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
   align-items: center;
   text-align: center;
-  gap: 1em;
   font-size: 1.375rem;
-  padding: 2em 1em;
+  padding: 2rem 1rem;
+  gap: 1em;
   border: 1px solid $clr-text--secondary;
   border-radius: 5px;
   box-shadow: 0 3px 6px 1px black;
@@ -69,12 +68,6 @@
 
   span {
     font-size: 3em;
-  }
-}
-
-.about-card:nth-child(2) {
-  span {
-    font-size: 3.75em;
   }
 }
 
@@ -88,23 +81,23 @@
   justify-content: space-between;
   align-items: center;
   text-align: center;
+  font-size: 2.5vw;
 
   p {
-    font-size: 1.375rem;
+    font-size: 0.45em;
   }
 }
 
 .mission-heading__container {
   display: flex;
-  font-size: 1.5rem;
 
   h3 {
-    font-size: 2em;
     font-weight: 400;
+    margin-bottom: 1rem;
   }
 
   span {
-    font-size: 2.25em;
+    font-size: 1.375em;
     font-weight: 600;
   }
 }

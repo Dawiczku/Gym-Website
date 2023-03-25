@@ -24,7 +24,10 @@ export default function About() {
           </div>
           <div className="about-card bg-clr--secondary">
             <span className="material-symbols-outlined">exercise</span>
-            <p>Professionals with numerous diplomas and years of experience.</p>
+            <p>
+              Professional trainers with numerous diplomas and many years of
+              experience.
+            </p>
           </div>
         </div>
 
