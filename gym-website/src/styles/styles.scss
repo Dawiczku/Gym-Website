@@ -1,6 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=Righteous&family=Ubuntu&display=swap");
-@import "./main";
-@import "./about";
+@import "./main", "./about", "./plans";
 
 *,
 *::before,
@@ -9,6 +8,10 @@
   font-family: "Ubuntu", sans-serif;
   margin: 0;
   padding: 0;
+}
+
+section {
+  height: 100vh;
 }
 
 .text-clr--primary {

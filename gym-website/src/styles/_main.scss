@@ -1,7 +1,6 @@
 @import "./variables", "./header";
 
 .section--main {
-  height: 100vh;
   background-image: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)),
     url("../images/main_image.jpg");
   background-size: cover;
