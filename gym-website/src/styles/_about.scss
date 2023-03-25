@@ -54,7 +54,7 @@
   gap: 1.5rem;
 }
 
-.card {
+.about-card {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -73,13 +73,13 @@
   }
 }
 
-.card:nth-child(2) {
+.about-card:nth-child(2) {
   span {
     font-size: 3.75em;
   }
 }
 
-.card:hover {
+.about-card:hover {
   transform: translateY(-5px);
 }
 

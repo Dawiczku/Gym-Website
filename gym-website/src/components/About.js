@@ -8,21 +8,21 @@ export default function About() {
         <h2 className="text--upper font--slab">Who are we ?</h2>
 
         <div className="about-cards__wrapper">
-          <div className="card bg-clr--secondary">
+          <div className="about-card bg-clr--secondary">
             <span className="material-symbols-outlined">health_metrics</span>
             <p>
               People living a healthy lifestyle without sacrificing everyday
               pleasures.
             </p>
           </div>
-          <div className="card bg-clr--secondary">
+          <div className="about-card bg-clr--secondary">
             <span className="material-symbols-outlined">groups</span>
             <p>
               Group of friends who started working out together and fell in love
               with training.
             </p>
           </div>
-          <div className="card bg-clr--secondary">
+          <div className="about-card bg-clr--secondary">
             <span className="material-symbols-outlined">exercise</span>
             <p>Professionals with numerous diplomas and years of experience.</p>
           </div>
