@@ -3,7 +3,7 @@ header {
   justify-content: space-between;
   align-items: center;
   width: 100%;
-  padding: 1.25rem 3rem;
+  padding: 0.75em 1.5em;
   border-bottom: 1px solid white;
 }
 
@@ -13,9 +13,19 @@ header {
   gap: 2em;
 }
 
+@media (max-width: 1270px) {
+  header {
+    flex-direction: column;
+  }
+
+  .logo__container {
+    margin-bottom: 0.5em;
+  }
+}
+
 .logo__name,
 .logo {
-  font-size: 4.5rem;
+  font-size: clamp(1em, 9vw, 3.5em);
   background-image: linear-gradient(150deg, $clr--accent, rgb(94, 161, 32));
   background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -24,20 +34,18 @@ header {
 .links {
   display: flex;
   align-items: center;
+
   li {
     position: relative;
-    margin: 0 1.5em;
-    font-size: 1.5rem;
+    font-size: clamp(0.5em, 3.5vw, 1.125em);
     font-weight: 600;
+    margin: 0 2em;
+    padding: 0.25em 0;
   }
 
   li:hover {
     cursor: pointer;
     color: white;
-  }
-
-  li:not(.login__link) {
-    padding: 0.25em 0;
   }
 
   li:not(.login__link)::after {
