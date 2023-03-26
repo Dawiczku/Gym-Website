@@ -4,7 +4,7 @@ header {
   justify-content: space-between;
   align-items: center;
   width: 100%;
-  padding: 1.25rem 3rem;
+  padding: 0.75em 1.5em;
   border-bottom: 1px solid white;
 }
 
@@ -14,9 +14,17 @@ header {
   gap: 2em;
 }
 
+@media (max-width: 1270px) {
+  header {
+    flex-direction: column;
+  }
+  .logo__container {
+    margin-bottom: 0.5em;
+  }
+}
 .logo__name,
 .logo {
-  font-size: 4.5rem;
+  font-size: clamp(1em, 9vw, 3.5em);
   background-image: linear-gradient(150deg, rgb(154, 205, 50), rgb(94, 161, 32));
   -webkit-background-clip: text;
           background-clip: text;
@@ -29,16 +37,14 @@ header {
 }
 .links li {
   position: relative;
-  margin: 0 1.5em;
-  font-size: 1.5rem;
+  font-size: clamp(0.5em, 3.5vw, 1.125em);
   font-weight: 600;
+  margin: 0 2em;
+  padding: 0.25em 0;
 }
 .links li:hover {
   cursor: pointer;
   color: white;
-}
-.links li:not(.login__link) {
-  padding: 0.25em 0;
 }
 .links li:not(.login__link)::after {
   content: "";
@@ -66,24 +72,31 @@ header {
 .section--main {
   background-image: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)), url("../images/main_image.jpg");
   background-size: cover;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  font-size: 20px;
   overflow: hidden;
 }
 
 .main-content__wrapper {
-  position: absolute;
-  left: 15%;
-  top: 35%;
-  width: 750px;
+  max-width: 650px;
+  margin: 0 0 0 7em;
 }
 .main-content__wrapper p {
-  font-size: 1.5rem;
+  font-size: clamp(0.5em, 3.5vw, 1.125em);
   font-weight: 600;
-  line-height: 2.5rem;
+  line-height: 1.75em;
 }
 
+@media (max-width: 775px) {
+  .main-content__wrapper {
+    margin: 0 15vw;
+  }
+}
 .quote__main {
-  font-size: 4.25rem;
-  margin-bottom: 0.75rem;
+  font-size: clamp(1.75em, 10vw, 3em);
+  margin-bottom: 0.25em;
 }
 
 .scroll__button {
@@ -91,23 +104,21 @@ header {
   flex-direction: column;
   align-items: center;
   justify-content: flex-end;
-  gap: 56px;
-  position: absolute;
-  top: 90%;
-  left: 50%;
-  right: 50%;
-  transform: translateX(-50%);
+  align-self: center;
+  gap: 2.5em;
+  margin: 1em;
+  font-size: 0.85em;
   aspect-ratio: 1/1;
-  width: 3.5rem;
-  border-radius: 50%;
+  width: 2.75em;
   border: 3px solid rgb(154, 205, 50);
-  color: rgb(220, 220, 220);
+  border-radius: 50%;
   background: transparent;
+  color: rgb(220, 220, 220);
   transition: 250ms;
   overflow: hidden;
 }
 .scroll__button span {
-  font-size: 2.5em;
+  font-size: 1.65em;
   font-weight: 600;
   transition: 350ms ease-in-out;
 }
@@ -122,16 +133,17 @@ header {
 }
 
 .scroll__button:hover .arrow--upper {
-  transform: translateY(90px);
+  transform: translateY(2.5em);
 }
 
 .scroll__button:hover .arrow--lower {
-  transform: translateY(90px);
+  transform: translateY(2.5em);
 }
 
 .about-content__wrapper {
   display: flex;
   justify-content: center;
+  position: relative;
   border-top: 2px solid white;
 }
 
@@ -155,14 +167,13 @@ header {
 .section--about {
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
   position: relative;
-  gap: 5rem;
   padding: 2rem 3rem;
 }
 .section--about h2 {
-  font-size: 5.5rem;
+  font-size: 4.25vw;
   font-weight: 300;
 }
 
@@ -175,12 +186,11 @@ header {
 .about-card {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
   align-items: center;
   text-align: center;
-  gap: 1em;
   font-size: 1.375rem;
-  padding: 2em 1em;
+  padding: 2rem 1rem;
+  gap: 1em;
   border: 1px solid rgb(30, 30, 30);
   border-radius: 5px;
   box-shadow: 0 3px 6px 1px black;
@@ -188,10 +198,6 @@ header {
 }
 .about-card span {
   font-size: 3em;
-}
-
-.about-card:nth-child(2) span {
-  font-size: 3.75em;
 }
 
 .about-card:hover {
@@ -204,21 +210,21 @@ header {
   justify-content: space-between;
   align-items: center;
   text-align: center;
+  font-size: 2.5vw;
 }
 .our-mission__container p {
-  font-size: 1.375rem;
+  font-size: 0.45em;
 }
 
 .mission-heading__container {
   display: flex;
-  font-size: 1.5rem;
 }
 .mission-heading__container h3 {
-  font-size: 2em;
   font-weight: 400;
+  margin-bottom: 1rem;
 }
 .mission-heading__container span {
-  font-size: 2.25em;
+  font-size: 1.375em;
   font-weight: 600;
 }
 
@@ -245,6 +251,41 @@ header {
   transition: 150ms;
 }
 
+.section--plans {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.9)), url("../images/plans_image.jpg");
+  background-size: cover;
+  border-top: 2px solid white;
+  display: grid;
+  place-items: center;
+}
+
+.plans-content__wrapper {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 100%;
+}
+
+.plans-desc__container {
+  display: block;
+}
+
+.plans-heading {
+  font-size: 3rem;
+}
+.plans-heading h4 {
+  font-size: 1.125em;
+}
+
+.arrows {
+  display: flex;
+  justify-content: flex-start;
+}
+
+.arrow span {
+  font-size: 2em;
+}
+
 *,
 *::before,
 *::after {
@@ -255,7 +296,15 @@ header {
 }
 
 section {
-  height: 100vh;
+  min-height: 100vh;
+}
+
+.font--bold {
+  font-weight: 600;
+}
+
+.font--slim {
+  font-weight: 300;
 }
 
 .text-clr--primary {

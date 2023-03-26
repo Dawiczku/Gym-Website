@@ -11,7 +11,15 @@
 }
 
 section {
-  height: 100vh;
+  min-height: 100vh;
+}
+
+.font--bold {
+  font-weight: $font--bold;
+}
+
+.font--slim {
+  font-weight: $font--slim;
 }
 
 .text-clr--primary {
