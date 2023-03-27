@@ -1,3 +1,5 @@
+@import "./mixins";
+
 header {
   @include flexJustAlign(space-between, center);
   width: 100%;
