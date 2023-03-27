@@ -1,15 +1,12 @@
 header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+  @include flexJustAlign(space-between, center);
   width: 100%;
   padding: 0.75em 1.5em;
   border-bottom: 1px solid white;
 }
 
 .logo__container {
-  display: flex;
-  align-items: center;
+  @include flexJustAlign(normal, center);
   gap: 2em;
 }
 
@@ -32,8 +29,7 @@ header {
 }
 
 .links {
-  display: flex;
-  align-items: center;
+  @include flexJustAlign(normal, center);
 
   li {
     position: relative;
