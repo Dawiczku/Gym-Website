@@ -33,8 +33,10 @@ export default function About() {
 
         <div className="our-mission__container">
           <div className="mission-heading__container">
-            <h3 className="font--slab text--upper">Our Mission</h3>
-            <span className="material-symbols-outlined">flag</span>
+            <h3 className="font--slab text--upper">
+              Our Goal
+              <span className="material-symbols-outlined">flag</span>
+            </h3>
           </div>
           <p>
             We want people to fell in love with training and show you how to
