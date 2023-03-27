@@ -1,0 +1,122 @@
+@import "./mixins";
+
+.section--plans {
+  background: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.9)),
+    url("../images/plans_image.jpg");
+  background-size: cover;
+  @include flexJustAlign(space-evenly, center);
+  flex-direction: column;
+  font-size: 20px;
+  border-top: 2px solid white;
+  padding: 0.5em 1em;
+}
+
+.plans-heading {
+  max-width: 1300px;
+  margin-bottom: 2em;
+
+  h4 {
+    font-size: clamp(1.75em, 8vw, 4.25em);
+    text-align: center;
+  }
+}
+
+.plans-icons__container {
+  @include flexJustAlign(space-evenly, normal);
+}
+
+.plans__icon {
+  @include flexJustAlign(normal, center);
+  gap: 1em;
+
+  span {
+    font-size: clamp(1.125em, 8vw, 2.5em);
+  }
+  p {
+    font-size: clamp(0.75em, 6vw, 1.375em);
+  }
+}
+
+@media (max-width: 710px) {
+  .plans-icons__container {
+    @include flexJustAlign(space-between, center);
+    gap: 0.25em;
+    flex-direction: column;
+  }
+}
+
+.plans-cards__container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 5em;
+  margin: 2em 0.5em;
+}
+
+@media (max-width: 1200px) {
+  .plans-cards__container {
+    grid-template-columns: minmax(300px, 18em);
+    margin-bottom: 2em;
+  }
+}
+
+.plans__card {
+  border: 1px solid white;
+  text-align: center;
+  padding: 0.25em;
+  filter: grayscale(1);
+  opacity: 0.85;
+  transition: 250ms;
+
+  h5 {
+    font-size: 2.25em;
+    padding: 1em 2.5em;
+    clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+  }
+
+  p {
+    font-size: 1.25em;
+    margin-bottom: 0.5rem;
+  }
+}
+
+.plans__card:hover {
+  filter: grayscale(0);
+  opacity: 1;
+  transform: translateY(-10px);
+}
+
+.price {
+  @include flexJustAlign(center, flex-end);
+  padding: 1.5em 0;
+  border-bottom: 1px solid white;
+
+  .price--integer {
+    font-size: 1.75em;
+  }
+
+  .price--decimal {
+    font-size: 1.5em;
+  }
+}
+
+.plan__info {
+  @include flexJustAlign(normal, center);
+  flex-direction: column;
+  padding: 1.5em 0;
+  gap: 0.5em;
+}
+
+.plans__scroll-button {
+  font-size: 1.125em;
+  background: transparent;
+  padding: 0.5em 1em;
+  border: 3px solid $clr--accent;
+  border-radius: 200px;
+  transition: 250ms;
+  cursor: pointer;
+}
+
+.plans__scroll-button:hover {
+  background-color: $clr-bg--secondary;
+  color: $clr-text--secondary;
+}
