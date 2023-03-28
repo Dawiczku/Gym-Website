@@ -1,8 +1,9 @@
 import React from "react";
+import { Link } from "react-scroll";
 
 export default function Plans() {
   return (
-    <section className="section--plans text-clr--primary">
+    <section id="section--plans" className="section--plans text-clr--primary">
       <div className="plans-heading__container">
         <div className="plans-heading accent--clr">
           <h4 className="font--slim text--upper font--slab">
@@ -98,9 +99,11 @@ export default function Plans() {
           </div>
         </div>
       </div>
-      <button className="plans__scroll-button text-clr--primary font--bold">
-        Got questions ?
-      </button>
+      <Link to="section--contact" spy={true} smooth={true} duration={500}>
+        <button className="plans__scroll-button text-clr--primary font--bold">
+          Got questions ?
+        </button>
+      </Link>
     </section>
   );
 }

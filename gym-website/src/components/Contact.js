@@ -1,10 +1,14 @@
 import React from "react";
+import { Link } from "react-scroll";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 export default function Contact() {
   return (
     <>
-      <section className="contact-section__wrapper text-clr--primary">
+      <section
+        id="section--contact"
+        className="contact-section__wrapper text-clr--primary"
+      >
         <div className="contact-heading__container">
           <h6 className="text--upper font--slab accent--clr">Contact Us</h6>
           <p>Got any questions ? Feel free to ask anything !</p>

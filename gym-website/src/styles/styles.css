@@ -102,12 +102,15 @@ header {
   margin-bottom: 0.25em;
 }
 
+.scroll-button__link {
+  align-self: center;
+}
+
 .scroll__button {
   display: flex;
   justify-content: flex-end;
   align-items: center;
   flex-direction: column;
-  align-self: center;
   gap: 2.5em;
   margin: 1em;
   font-size: 1em;

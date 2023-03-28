@@ -1,8 +1,9 @@
 import React from "react";
+import { Link } from "react-scroll";
 
 export default function About() {
   return (
-    <section className="about-content__wrapper">
+    <section id="section--about" className="about-content__wrapper">
       <div className="about-content__image"></div>
       <div className="section--about text-clr--secondary">
         <h2 className="text--upper font--slab">Who are we ?</h2>
@@ -44,7 +45,9 @@ export default function About() {
             responsibilities, so you can become the best version of yourself !
           </p>
         </div>
-        <button className="about__scroll-button">Are you ready ?</button>
+        <Link to="section--plans" spy={true} smooth={true} duration={500}>
+          <button className="about__scroll-button">Are you ready ?</button>
+        </Link>
       </div>
     </section>
   );
