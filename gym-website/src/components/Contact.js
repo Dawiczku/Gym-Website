@@ -103,6 +103,17 @@ export default function Contact() {
                 </div>
               </div>
             </div>
+            <Link
+              className="top-scroll-button__link"
+              to="section--main"
+              spy={true}
+              smooth={true}
+              duration={500}
+            >
+              <button className="top-scroll__button text-clr--primary bg-clr--dark">
+                Scroll to the top!
+              </button>
+            </Link>
           </div>
 
           <form className="contact-form">

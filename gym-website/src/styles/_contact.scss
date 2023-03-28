@@ -28,23 +28,9 @@
   width: 100%;
 }
 
-@media (max-width: 900px) {
-  .contact-info__container {
-    @include flexJustAlign(space-around, center);
-    flex-direction: column;
-    gap: 1em;
-  }
-
-  .contact-section__wrapper {
-    gap: 1em;
-  }
-
-  .contact-form {
-    padding: 1em;
-  }
-}
-
 .info__wrapper {
+  @include flexJustAlign(space-between, flex-start);
+  flex-direction: column;
   span {
     font-size: clamp(1.75em, 4vw, 2.75em);
   }
@@ -101,6 +87,25 @@
 
 .info:not(.info:last-child) {
   margin-bottom: 1.5em;
+}
+
+.top-scroll-button__link {
+  align-self: center;
+}
+
+.top-scroll__button {
+  font-size: clamp(0.75em, 4vw, 1.25em);
+  padding: 0.5em 0.75em;
+  border: 2px solid $clr--accent;
+  border-radius: 200px;
+  cursor: pointer;
+  filter: grayscale(1);
+  transition: 150ms ease-in-out;
+}
+
+.top-scroll__button:hover {
+  filter: grayscale(0);
+  box-shadow: 0 0 12px 1px $clr--accent;
 }
 
 .contact-form {
@@ -168,4 +173,20 @@ footer {
 
 .github__link:hover {
   color: $clr--accent;
+}
+
+@media (max-width: 900px) {
+  .contact-info__container {
+    @include flexJustAlign(space-around, center);
+    flex-direction: column;
+    gap: 1em;
+  }
+
+  .contact-section__wrapper {
+    gap: 1em;
+  }
+
+  .contact-form {
+    padding: 1em;
+  }
 }
