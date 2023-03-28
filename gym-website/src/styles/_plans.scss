@@ -8,7 +8,7 @@
   flex-direction: column;
   font-size: 20px;
   border-top: 2px solid white;
-  padding: 0.5em 1em;
+  padding: 1.5em 1em;
 }
 
 .plans-heading {
@@ -114,7 +114,7 @@
 }
 
 .plans__scroll-button {
-  font-size: 1.125em;
+  font-size: clamp(0.875em, 4vw, 1.125em);
   background: transparent;
   padding: 0.5em 1em;
   border: 3px solid $clr--accent;
