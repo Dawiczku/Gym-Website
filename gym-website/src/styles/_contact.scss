@@ -1,0 +1,171 @@
+@import "./mixins";
+
+.contact-section__wrapper {
+  @include flexJustAlign(space-between, center);
+  flex-direction: column;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.9)),
+    url("../images/contact_image.jpg");
+  background-size: cover;
+  padding: 2em 0 1em 0;
+  border-top: 2px solid white;
+  font-size: 20px;
+}
+
+.contact-heading__container {
+  text-align: center;
+
+  h6 {
+    font-size: clamp(1.5em, 5vw, 3em);
+  }
+
+  p {
+    font-size: clamp(0.875em, 3vw, 1.5em);
+  }
+}
+
+.contact-info__container {
+  @include flexJustAlign(space-around, flex-start);
+  width: 100%;
+}
+
+@media (max-width: 900px) {
+  .contact-info__container {
+    @include flexJustAlign(space-around, center);
+    flex-direction: column;
+    gap: 1em;
+  }
+
+  .contact-section__wrapper {
+    gap: 1em;
+  }
+
+  .contact-form {
+    padding: 1em;
+  }
+}
+
+.info__wrapper {
+  span {
+    font-size: clamp(1.75em, 4vw, 2.75em);
+  }
+
+  p {
+    font-size: clamp(0.75em, 3vw, 1em);
+  }
+
+  .info__heading {
+    font-size: clamp(1.125em, 4vw, 1.5em);
+    margin-bottom: 0.25em;
+  }
+}
+
+.info {
+  display: flex;
+  gap: 1.25em;
+}
+
+.social-media__container {
+  text-align: center;
+}
+
+.social-media__links {
+  @include flexJustAlign(flex-start, center);
+  gap: 1em;
+}
+
+.social-icon {
+  aspect-ratio: 1/1;
+  font-size: 1em;
+  filter: grayscale(1);
+  transition: 150ms ease-in-out;
+}
+
+.social-icon:hover {
+  filter: grayscale(0);
+}
+
+.icon--facebook {
+  color: rgb(70, 107, 187);
+  font-size: 1.75em;
+}
+
+.icon--instagram {
+  color: #d42b96;
+  font-size: 2em;
+}
+
+.icon--youtube {
+  color: red;
+  font-size: 2.25em;
+}
+
+.info:not(.info:last-child) {
+  margin-bottom: 1.5em;
+}
+
+.contact-form {
+  @include flexJustAlign(space-around, flex-start);
+  flex-direction: column;
+  padding: 1.5em 3em;
+  margin: 0 1em;
+  border: 2px solid $clr-border--light;
+
+  input,
+  textarea {
+    font-size: clamp(0.75em, 3vw, 1.25em);
+    background: inherit;
+    border: none;
+  }
+
+  input {
+    padding: 1em 0.25em 0.5em 0.25em;
+  }
+
+  textarea {
+    padding: 0.5em;
+    border: 2px solid $clr--accent;
+    width: 100%;
+    aspect-ratio: 3/2;
+    resize: none;
+  }
+
+  input:not(.form-submit__button),
+  textarea {
+    color: $clr-text--primary;
+  }
+
+  input:not(.form-submit__button) {
+    border-bottom: 2px solid $clr--accent;
+  }
+
+  input#phone-number {
+    margin-bottom: 1.5em;
+  }
+
+  input:focus,
+  textarea:focus {
+    outline: none;
+  }
+}
+
+.form-submit__button {
+  align-self: flex-end;
+  color: $clr-text--primary;
+  cursor: pointer;
+}
+
+.form-submit__button:hover {
+  color: white;
+}
+
+footer {
+  display: flex;
+  font-size: clamp(1em, 4vw, 1.25em);
+  p {
+    margin: 0 0.5em;
+  }
+}
+
+.github__link:hover {
+  color: $clr--accent;
+}

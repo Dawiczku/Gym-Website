@@ -1,5 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=Righteous&family=Ubuntu&display=swap");
-@import "./main", "./about", "./plans";
+@import "./main", "./about", "./plans", "./contact";
 
 *,
 *::before,
@@ -71,4 +71,9 @@ h5,
 h6 {
   margin: 0;
   padding: 0;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
 }
