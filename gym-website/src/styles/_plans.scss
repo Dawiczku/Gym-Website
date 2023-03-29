@@ -112,18 +112,3 @@
   padding: 1.5em 0;
   gap: 0.5em;
 }
-
-.plans__scroll-button {
-  font-size: clamp(0.875em, 4vw, 1.125em);
-  background: transparent;
-  padding: 0.5em 1em;
-  border: 3px solid $clr--accent;
-  border-radius: 200px;
-  transition: 250ms;
-  cursor: pointer;
-}
-
-.plans__scroll-button:hover {
-  background-color: $clr-bg--secondary;
-  color: $clr-text--secondary;
-}

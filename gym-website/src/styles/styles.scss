@@ -1,5 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=Righteous&family=Ubuntu&display=swap");
-@import "./main", "./about", "./plans", "./contact";
+@import "./main", "./about", "./plans", "./contact", "./login", "./buttons";
 
 *,
 *::before,
@@ -28,6 +28,10 @@ section {
 
 .text-clr--secondary {
   color: $clr-text--secondary;
+}
+
+.text-clr--red {
+  color: firebrick;
 }
 
 .text--upper {

@@ -21,7 +21,7 @@ export default function Main() {
         smooth={true}
         duration={500}
       >
-        <button className="scroll__button">
+        <button className="main__scroll-button">
           <span className="material-symbols-outlined arrow--upper">
             arrow_downward
           </span>
