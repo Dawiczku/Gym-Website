@@ -1,4 +1,52 @@
 @import url("https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=Righteous&family=Ubuntu&display=swap");
+@-webkit-keyframes animate_link {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@keyframes animate_link {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@-webkit-keyframes animate_pulse {
+  from {
+    transform: scale(0.93);
+  }
+  to {
+    transform: scale(1);
+  }
+}
+@keyframes animate_pulse {
+  from {
+    transform: scale(0.93);
+  }
+  to {
+    transform: scale(1);
+  }
+}
+@-webkit-keyframes animate_right_to_left {
+  from {
+    transform: translateX(600px);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+@keyframes animate_right_to_left {
+  from {
+    transform: translateX(600px);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
 header {
   display: flex;
   justify-content: space-between;
@@ -13,6 +61,8 @@ header {
   justify-content: normal;
   align-items: center;
   gap: 2em;
+  -webkit-animation: 1s animate_link;
+          animation: 1s animate_link;
 }
 
 @media (max-width: 1270px) {
@@ -36,6 +86,22 @@ header {
   display: flex;
   justify-content: normal;
   align-items: center;
+}
+.links li:first-child {
+  -webkit-animation: 2s animate_link;
+          animation: 2s animate_link;
+}
+.links li:nth-child(2) {
+  -webkit-animation: 2.5s animate_link;
+          animation: 2.5s animate_link;
+}
+.links li:nth-child(3) {
+  -webkit-animation: 3s animate_link;
+          animation: 3s animate_link;
+}
+.links li:nth-child(4) {
+  -webkit-animation: 3.5s animate_link;
+          animation: 3.5s animate_link;
 }
 .links li {
   position: relative;
@@ -90,6 +156,7 @@ header {
   font-size: clamp(0.5em, 3.5vw, 1.125em);
   font-weight: 600;
   line-height: 1.75em;
+  transition: 1s;
 }
 
 @media (max-width: 775px) {
@@ -100,6 +167,7 @@ header {
 .quote__main {
   font-size: clamp(1.75em, 10vw, 3em);
   margin-bottom: 0.25em;
+  transition: 1s;
 }
 
 .scroll-button__link {
@@ -552,6 +620,30 @@ footer p {
   align-self: flex-start;
 }
 
+@keyframes animate_link {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@keyframes animate_pulse {
+  from {
+    transform: scale(0.93);
+  }
+  to {
+    transform: scale(1);
+  }
+}
+@keyframes animate_right_to_left {
+  from {
+    transform: translateX(600px);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
 .main__scroll-button {
   display: flex;
   justify-content: flex-end;
@@ -568,6 +660,8 @@ footer p {
   color: rgb(220, 220, 220);
   transition: 250ms;
   overflow: hidden;
+  -webkit-animation: 750ms infinite alternate animate_pulse;
+          animation: 750ms infinite alternate animate_pulse;
 }
 .main__scroll-button span {
   font-size: 1.65em;

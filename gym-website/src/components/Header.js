@@ -25,9 +25,9 @@ export default function Header() {
             Contact
           </Link>
         </li>
-        <NavLink to="/login">
-          <li className="login__link">Login</li>
-        </NavLink>
+        <li className="login__link">
+          <NavLink to="/login">Login</NavLink>
+        </li>
       </ul>
     </header>
   );

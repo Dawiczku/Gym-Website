@@ -1,4 +1,4 @@
-@import "./mixins";
+@import "./mixins", "./animations";
 
 header {
   @include flexJustAlign(space-between, center);
@@ -10,6 +10,7 @@ header {
 .logo__container {
   @include flexJustAlign(normal, center);
   gap: 2em;
+  animation: 1s animate_link;
 }
 
 @media (max-width: 1270px) {
@@ -32,6 +33,22 @@ header {
 
 .links {
   @include flexJustAlign(normal, center);
+
+  li:first-child {
+    animation: 2s animate_link;
+  }
+
+  li:nth-child(2) {
+    animation: 2.5s animate_link;
+  }
+
+  li:nth-child(3) {
+    animation: 3s animate_link;
+  }
+
+  li:nth-child(4) {
+    animation: 3.5s animate_link;
+  }
 
   li {
     position: relative;

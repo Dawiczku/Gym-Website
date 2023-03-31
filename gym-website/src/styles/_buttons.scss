@@ -1,3 +1,5 @@
+@import "./animations";
+
 .main__scroll-button {
   @include flexJustAlign(flex-end, center);
   flex-direction: column;
@@ -12,6 +14,7 @@
   color: $clr-text--primary;
   transition: 250ms;
   overflow: hidden;
+  animation: 750ms infinite alternate animate_pulse;
 
   span {
     font-size: 1.65em;
