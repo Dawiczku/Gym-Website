@@ -3,8 +3,8 @@ import React from "react";
 export default function Login() {
   return (
     <>
-      <section className="section--login text-clr--primary bg-clr--form-section">
-        <form className="login__form clr-border--grey bg-clr--dark">
+      <section className="section--login section--form text-clr--primary bg-clr--form-section">
+        <form className="login__form account__form clr-border--grey bg-clr--dark">
           <h1 className="font--bold accent--clr">Login !</h1>
 
           <input

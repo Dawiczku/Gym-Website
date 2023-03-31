@@ -495,32 +495,33 @@ footer p {
     padding: 1em;
   }
 }
-.section--login {
+.section--form {
   display: grid;
   place-items: center;
   font-size: 20px;
 }
 
-.login__form {
+.account__form {
   display: flex;
   justify-content: space-around;
   align-items: center;
   flex-direction: column;
   gap: 2em;
-  padding: 3em 2em;
+  padding: 4em 3em;
   margin: 1em;
   border: 2px solid rgb(100, 100, 100);
   box-shadow: 0 2px 15px 2px rgb(154, 205, 50);
 }
-.login__form h1,
-.login__form input[type=submit] {
+.account__form h1,
+.account__form input[type=submit] {
   align-self: center;
 }
-.login__form h1 {
+.account__form h1 {
   font-size: clamp(1.75em, 4vw, 2.5em);
 }
-.login__form input[type=text],
-.login__form input[type=password] {
+.account__form input[type=text],
+.account__form input[type=password],
+.account__form input[type=email] {
   font-size: clamp(0.75em, 3vw, 1.25em);
   background-color: inherit;
   padding: 0.5em;
@@ -528,25 +529,26 @@ footer p {
   border: none;
   border-bottom: 2px solid rgb(154, 205, 50);
 }
-.login__form input:hover,
-.login__form input:focus {
+.account__form input:hover,
+.account__form input:focus {
   outline: none;
 }
-.login__form p {
+.account__form p {
   font-size: clamp(0.75em, 3vw, 1em);
   cursor: pointer;
   transition: 150ms ease-in-out;
 }
-.login__form p:hover {
+.account__form p:hover {
   color: white;
 }
 
 @media (max-width: 600px) {
-  .login__form {
+  .account__form {
     padding: 2em 1em;
   }
 }
-.forgot-password__link {
+.forgot-password__link,
+.account-exist__form {
   align-self: flex-start;
 }
 

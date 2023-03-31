@@ -3,6 +3,7 @@ import About from "./components/About";
 import Plans from "./components/Plans";
 import Contact from "./components/Contact";
 import Login from "./components/Login";
+import Register from "./components/Register";
 import "./components/FontAwesomeIcons";
 import "./styles/styles.css";
 
@@ -13,7 +14,8 @@ function App() {
       {/* <About /> */}
       {/* <Plans /> */}
       {/* <Contact /> */}
-      <Login />
+      {/* <Login /> */}
+      <Register />
     </>
   );
 }
