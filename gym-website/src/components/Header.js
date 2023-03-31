@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-scroll";
+import { NavLink } from "react-router-dom";
 
 export default function Header() {
   return (
@@ -24,7 +25,9 @@ export default function Header() {
             Contact
           </Link>
         </li>
-        <li className="login__link">Login</li>
+        <NavLink to="/login">
+          <li className="login__link">Login</li>
+        </NavLink>
       </ul>
     </header>
   );

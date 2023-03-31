@@ -1,4 +1,5 @@
 import React from "react";
+import { NavLink } from "react-router-dom";
 
 export default function Login() {
   return (
@@ -6,7 +7,6 @@ export default function Login() {
       <section className="section--login section--form text-clr--primary bg-clr--form-section">
         <form className="login__form account__form clr-border--grey bg-clr--dark">
           <h1 className="font--bold accent--clr">Login !</h1>
-
           <input
             className="nickname__input text-clr--primary"
             type="text"
@@ -23,13 +23,19 @@ export default function Login() {
             maxLength={15}
             required
           ></input>
-          <p className="forgot-password__link font--bold">Forgot Password ?</p>
+          <NavLink to="/forgot-password">
+            <p className="forgot-password__link font--bold">
+              Forgot Password ?
+            </p>
+          </NavLink>
           <input
             className="login__button button--style-second text-clr--primary"
             type="submit"
             value="Sign In"
           ></input>
-          <p className="signup__link font--bold">Not a member ? Sign up!</p>
+          <NavLink to="/register">
+            <p className="signup__link font--bold">Not a member ? Sign up!</p>
+          </NavLink>
         </form>
       </section>
     </>

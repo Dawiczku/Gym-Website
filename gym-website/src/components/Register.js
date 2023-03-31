@@ -1,4 +1,5 @@
 import React from "react";
+import { NavLink } from "react-router-dom";
 
 export default function Register() {
   return (
@@ -40,7 +41,10 @@ export default function Register() {
             maxLength={15}
             required
           ></input>
-          <p className="account-exist__form">Already have an account ?</p>
+
+          <NavLink to="/login">
+            <p className="account-exist__form">Already have an account ?</p>
+          </NavLink>
           <input
             className="register__button button--style-second text-clr--primary"
             type="submit"
