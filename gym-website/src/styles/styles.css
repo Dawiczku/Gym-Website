@@ -85,7 +85,7 @@ header {
           animation: 1s animate_link;
 }
 
-@media (max-width: 1270px) {
+@media (max-width: 1285px) {
   header {
     flex-direction: column;
   }
@@ -296,11 +296,6 @@ header {
     grid-template-columns: minmax(250px, 500px);
   }
 }
-.section--about.animate {
-  -webkit-animation: 1.5s animate_about;
-          animation: 1.5s animate_about;
-}
-
 .section--plans {
   background: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.9)), url("../images/plans_image.jpg");
   background-size: cover;
@@ -688,7 +683,7 @@ footer p {
   flex-direction: column;
   gap: 2.5em;
   margin: 1em;
-  font-size: 1em;
+  font-size: clamp(0.75em, 1vw, 0.875em);
   aspect-ratio: 1/1;
   width: 2.75em;
   border: 3px solid rgb(154, 205, 50);
@@ -727,7 +722,7 @@ footer p {
 .about__scroll-button {
   background-color: rgb(30, 30, 30);
   color: rgb(220, 220, 220);
-  font-size: clamp(0.625em, 2.5vw, 1em);
+  font-size: clamp(0.625em, 2.5vw, 0.875em);
   padding: 0.25em 0.5em;
   font-weight: 600;
   text-transform: uppercase;
@@ -767,7 +762,7 @@ footer p {
 
 /* ----- */
 .top-scroll__button {
-  font-size: clamp(0.75em, 4vw, 1.25em);
+  font-size: clamp(0.75em, 4vw, 1em);
   padding: 0.5em 0.75em;
   border: 2px solid rgb(154, 205, 50);
   border-radius: 200px;

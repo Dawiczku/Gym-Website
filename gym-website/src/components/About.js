@@ -1,9 +1,28 @@
+import React, { useState, useEffect } from "react";
 import { Link } from "react-scroll";
 import { useInView } from "react-intersection-observer";
 
 export default function About() {
   // Animations
   const { ref: animationRef, inView: sectionIsVisible } = useInView();
+  const [animation, setAnimation] = useState("");
+  const [opacity, setOpacity] = useState(0);
+  const [didAnimate, setDidAnimate] = useState(false);
+
+  useEffect(() => {
+    if (!didAnimate) {
+      if (!sectionIsVisible) {
+        setAnimation("");
+        setOpacity(0);
+      } else {
+        setTimeout(() => {
+          setAnimation("1.5s animate_about");
+          setOpacity(1);
+          setDidAnimate(true);
+        }, 500);
+      }
+    }
+  }, [sectionIsVisible, didAnimate]);
 
   //
 
@@ -12,11 +31,8 @@ export default function About() {
       <div className="about-content__image"></div>
       <div
         ref={animationRef}
-        className={
-          sectionIsVisible
-            ? "section--about text-clr--secondary animate"
-            : "section--about text-clr--secondary"
-        }
+        className="section--about text-clr--secondary"
+        style={{ animation: animation, opacity: opacity }}
       >
         <h2 className="text--upper font--slab">Who are we ?</h2>
 
