@@ -4,7 +4,10 @@ import { useInView } from "react-intersection-observer";
 
 export default function Plans() {
   // Animations
-  const { ref: plansSectionRef, inView: sectionIsVisible } = useInView();
+  const { ref: plansSectionRef, inView: sectionIsVisible } = useInView({
+    triggerOnce: "true",
+    threshold: ".75",
+  });
   // Animation for every element except cards
   const [opacity, setOpacity] = useState(0);
   const [animation, setAnimation] = useState("");
@@ -15,34 +18,30 @@ export default function Plans() {
   const [card2Animation, setCard2Animation] = useState("");
   const [card3Opacity, setCard3Opacity] = useState(0);
   const [card3Animation, setCard3Animation] = useState("");
-  const [didAnimate, setDidAnimate] = useState(false);
 
   useEffect(() => {
-    if (!didAnimate) {
-      if (!sectionIsVisible) {
-        setOpacity(0);
-        setAnimation("");
-      } else {
-        setTimeout(() => {
-          setAnimation(".75s animate_plans");
-          setOpacity(1);
-        }, 250);
-        setTimeout(() => {
-          setCard1Animation(".5s animate_plans");
-          setCard1Opacity(1);
-        }, 2000);
-        setTimeout(() => {
-          setCard2Animation(".5s animate_plans");
-          setCard2Opacity(1);
-        }, 1500);
-        setTimeout(() => {
-          setCard3Animation(".5s animate_plans");
-          setCard3Opacity(1);
-        }, 1000);
-        setDidAnimate(true);
-      }
+    if (!sectionIsVisible) {
+      setOpacity(0);
+      setAnimation("");
+    } else {
+      setTimeout(() => {
+        setAnimation(".75s animate_plans");
+        setOpacity(1);
+      }, 250);
+      setTimeout(() => {
+        setCard1Animation(".5s animate_plans");
+        setCard1Opacity(1);
+      }, 2000);
+      setTimeout(() => {
+        setCard2Animation(".5s animate_plans");
+        setCard2Opacity(1);
+      }, 1500);
+      setTimeout(() => {
+        setCard3Animation(".5s animate_plans");
+        setCard3Opacity(1);
+      }, 1000);
     }
-  }, [sectionIsVisible, didAnimate]);
+  }, [sectionIsVisible]);
 
   return (
     <section id="section--plans" className="section--plans text-clr--primary">
@@ -156,7 +155,6 @@ export default function Plans() {
       </div>
       <Link to="section--contact" spy={true} smooth={true} duration={500}>
         <button
-          ref={plansSectionRef}
           className="plans__scroll-button text-clr--primary font--bold"
           style={{ animation: animation, opacity: opacity }}
         >

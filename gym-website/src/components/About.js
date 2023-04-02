@@ -4,25 +4,23 @@ import { useInView } from "react-intersection-observer";
 
 export default function About() {
   // Animations
-  const { ref: aboutSectionRef, inView: sectionIsVisible } = useInView();
+  const { ref: aboutSectionRef, inView: sectionIsVisible } = useInView({
+    triggerOnce: "true",
+  });
   const [animation, setAnimation] = useState("");
   const [opacity, setOpacity] = useState(0);
-  const [didAnimate, setDidAnimate] = useState(false);
 
   useEffect(() => {
-    if (!didAnimate) {
-      if (!sectionIsVisible) {
-        setAnimation("");
-        setOpacity(0);
-      } else {
-        setTimeout(() => {
-          setAnimation("1s animate_about");
-          setOpacity(1);
-          setDidAnimate(true);
-        }, 500);
-      }
+    if (!sectionIsVisible) {
+      setAnimation("");
+      setOpacity(0);
+    } else {
+      setTimeout(() => {
+        setAnimation("1s animate_about");
+        setOpacity(1);
+      }, 500);
     }
-  }, [sectionIsVisible, didAnimate]);
+  }, [sectionIsVisible]);
 
   //
 

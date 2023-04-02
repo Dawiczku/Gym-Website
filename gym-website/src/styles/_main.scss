@@ -22,12 +22,6 @@
   }
 }
 
-@media (max-width: 775px) {
-  .main-content__wrapper {
-    margin: 0 15vw;
-  }
-}
-
 .quote__main {
   font-size: clamp(1.75em, 10vw, 3em);
   margin-bottom: 0.25em;
@@ -36,4 +30,12 @@
 
 .scroll-button__link {
   align-self: center;
+}
+
+// MediaQueries
+
+@media (max-width: 775px) {
+  .main-content__wrapper {
+    margin: 0 15vw;
+  }
 }

@@ -51,13 +51,15 @@
   }
 }
 
+.forgot-password__link,
+.account-exist__form {
+  align-self: flex-start;
+}
+
+// MediaQueries
+
 @media (max-width: 600px) {
   .account__form {
     padding: 2em 1em;
   }
-}
-
-.forgot-password__link,
-.account-exist__form {
-  align-self: flex-start;
 }

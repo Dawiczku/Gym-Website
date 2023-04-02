@@ -105,14 +105,6 @@ header {
           animation: 0.75s animate_link;
 }
 
-@media (max-width: 1285px) {
-  header {
-    flex-direction: column;
-  }
-  .logo__container {
-    margin-bottom: 0.5em;
-  }
-}
 .logo__name,
 .logo {
   font-size: clamp(1em, 9vw, 3.5em);
@@ -177,6 +169,14 @@ header {
   background-color: rgb(154, 205, 50);
 }
 
+@media (max-width: 1285px) {
+  header {
+    flex-direction: column;
+  }
+  .logo__container {
+    margin-bottom: 0.5em;
+  }
+}
 .section--main {
   background-image: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)), url("../images/main_image.jpg");
   background-size: cover;
@@ -199,11 +199,6 @@ header {
   transition: 1s;
 }
 
-@media (max-width: 775px) {
-  .main-content__wrapper {
-    margin: 0 15vw;
-  }
-}
 .quote__main {
   font-size: clamp(1.75em, 10vw, 3em);
   margin-bottom: 0.25em;
@@ -214,6 +209,11 @@ header {
   align-self: center;
 }
 
+@media (max-width: 775px) {
+  .main-content__wrapper {
+    margin: 0 15vw;
+  }
+}
 .about-content__wrapper {
   display: flex;
   justify-content: center;
@@ -652,16 +652,16 @@ footer p {
   color: white;
 }
 
-@media (max-width: 600px) {
-  .account__form {
-    padding: 2em 1em;
-  }
-}
 .forgot-password__link,
 .account-exist__form {
   align-self: flex-start;
 }
 
+@media (max-width: 600px) {
+  .account__form {
+    padding: 2em 1em;
+  }
+}
 @keyframes animate_link {
   from {
     opacity: 0;
