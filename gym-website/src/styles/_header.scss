@@ -10,7 +10,7 @@ header {
 .logo__container {
   @include flexJustAlign(normal, center);
   gap: 2em;
-  animation: 1s animate_link;
+  animation: 0.75s animate_link;
 }
 
 @media (max-width: 1285px) {

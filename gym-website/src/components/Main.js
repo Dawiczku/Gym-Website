@@ -9,7 +9,7 @@ export default function Main() {
   useEffect(() => {
     setTimeout(() => {
       setOpacity(1);
-      setAnimation("1.5s animate_right_to_left");
+      setAnimation(".75s animate_right_to_left");
     }, 1500);
   }, []);
 

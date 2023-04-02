@@ -16,7 +16,7 @@ export default function About() {
         setOpacity(0);
       } else {
         setTimeout(() => {
-          setAnimation("1.5s animate_about");
+          setAnimation("1s animate_about");
           setOpacity(1);
           setDidAnimate(true);
         }, 500);

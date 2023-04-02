@@ -101,8 +101,8 @@ header {
   justify-content: normal;
   align-items: center;
   gap: 2em;
-  -webkit-animation: 1s animate_link;
-          animation: 1s animate_link;
+  -webkit-animation: 0.75s animate_link;
+          animation: 0.75s animate_link;
 }
 
 @media (max-width: 1285px) {
