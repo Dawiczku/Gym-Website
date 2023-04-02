@@ -6,15 +6,13 @@ export default function About() {
   // Animations
   const { ref: aboutSectionRef, inView: sectionIsVisible } = useInView({
     triggerOnce: "true",
+    threshold: ".75",
   });
   const [animation, setAnimation] = useState("");
   const [opacity, setOpacity] = useState(0);
 
   useEffect(() => {
-    if (!sectionIsVisible) {
-      setAnimation("");
-      setOpacity(0);
-    } else {
+    if (sectionIsVisible) {
       setTimeout(() => {
         setAnimation("1s animate_about");
         setOpacity(1);

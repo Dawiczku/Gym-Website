@@ -87,6 +87,86 @@
     transform: translateX(0);
   }
 }
+@-webkit-keyframes animate_contact-heading {
+  from {
+    opacity: 0;
+    transform: translateX(-600px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+@keyframes animate_contact-heading {
+  from {
+    opacity: 0;
+    transform: translateX(-600px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+@-webkit-keyframes animate_contact-content--right {
+  from {
+    opacity: 0;
+    transform: translateX(600px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+@keyframes animate_contact-content--right {
+  from {
+    opacity: 0;
+    transform: translateX(600px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+@-webkit-keyframes animate_contact-content--left {
+  from {
+    opacity: 0;
+    transform: translateX(-600px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+@keyframes animate_contact-content--left {
+  from {
+    opacity: 0;
+    transform: translateX(-600px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+@-webkit-keyframes animate_contact-footer {
+  from {
+    opacity: 0;
+    transform: translateX(600px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+@keyframes animate_contact-footer {
+  from {
+    opacity: 0;
+    transform: translateX(600px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
 header {
   display: flex;
   justify-content: space-between;
@@ -700,6 +780,46 @@ footer p {
   from {
     opacity: 0;
     transform: translateX(-600px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+@keyframes animate_contact-heading {
+  from {
+    opacity: 0;
+    transform: translateX(-600px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+@keyframes animate_contact-content--right {
+  from {
+    opacity: 0;
+    transform: translateX(600px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+@keyframes animate_contact-content--left {
+  from {
+    opacity: 0;
+    transform: translateX(-600px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+@keyframes animate_contact-footer {
+  from {
+    opacity: 0;
+    transform: translateX(600px);
   }
   to {
     opacity: 1;

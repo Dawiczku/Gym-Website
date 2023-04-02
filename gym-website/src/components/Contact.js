@@ -1,21 +1,64 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Link } from "react-scroll";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { useInView } from "react-intersection-observer";
 
 export default function Contact() {
+  // Animations
+  const { ref: contactSectionRef, inView: sectionIsVisible } = useInView({
+    triggerOnce: "true",
+    threshold: ".75",
+  });
+  const [headingOpacity, setHeadingOpacity] = useState(0);
+  const [headingAnimation, setHeadingAnimation] = useState("");
+  const [leftContentOpacity, setLeftContentOpacity] = useState(0);
+  const [leftContentAnimation, setLeftContentAnimation] = useState("");
+  const [rightContentOpacity, setRightContentOpacity] = useState(0);
+  const [rightContentAnimation, setRightContentAnimation] = useState("");
+  const [footerOpacity, setFooterOpacity] = useState(0);
+  const [footerAnimation, setFooterAnimation] = useState("");
+
+  useEffect(() => {
+    if (sectionIsVisible) {
+      console.log("now");
+      setTimeout(() => {
+        setHeadingAnimation(".75s animate_contact-heading");
+        setHeadingOpacity(1);
+        setFooterAnimation(".75s animate_contact-footer");
+        setFooterOpacity(1);
+      }, 750);
+      setTimeout(() => {
+        setRightContentAnimation(".75s animate_contact-content--right");
+        setLeftContentAnimation(".75s animate_contact-content--left");
+        setRightContentOpacity(1);
+        setLeftContentOpacity(1);
+      }, 1250);
+    }
+  }, [sectionIsVisible]);
+
   return (
     <>
       <section
+        ref={contactSectionRef}
         id="section--contact"
         className="contact-section__wrapper text-clr--primary"
       >
-        <div className="contact-heading__container">
+        <div
+          className="contact-heading__container"
+          style={{ animation: headingAnimation, opacity: headingOpacity }}
+        >
           <h6 className="text--upper font--slab accent--clr">Contact Us</h6>
           <p>Got any questions ? Feel free to ask anything !</p>
         </div>
 
         <div className="contact-info__container">
-          <div className="info__wrapper">
+          <div
+            className="info__wrapper"
+            style={{
+              animation: leftContentAnimation,
+              opacity: leftContentOpacity,
+            }}
+          >
             <div className="location-info__container info">
               <span className="material-symbols-outlined font--bold accent--clr">
                 location_on
@@ -116,7 +159,13 @@ export default function Contact() {
             </Link>
           </div>
 
-          <form className="contact-form">
+          <form
+            className="contact-form"
+            style={{
+              animation: rightContentAnimation,
+              opacity: rightContentOpacity,
+            }}
+          >
             <input
               type="text"
               name="full-name"
@@ -157,11 +206,16 @@ export default function Contact() {
           </form>
         </div>
 
-        <footer>
+        <footer style={{ animation: footerAnimation, opacity: footerOpacity }}>
           <p className="font--bold">Designed By:</p>
           <span>
             <FontAwesomeIcon icon="fa-brands fa-github" />
-            <a className="github__link" href="https://github.com/Dawiczku">
+            <a
+              className="github__link"
+              href="https://github.com/Dawiczku"
+              target="_blank"
+              rel="noreferrer"
+            >
               {" "}
               Dawiczku
             </a>

@@ -20,10 +20,7 @@ export default function Plans() {
   const [card3Animation, setCard3Animation] = useState("");
 
   useEffect(() => {
-    if (!sectionIsVisible) {
-      setOpacity(0);
-      setAnimation("");
-    } else {
+    if (sectionIsVisible) {
       setTimeout(() => {
         setAnimation(".75s animate_plans");
         setOpacity(1);
