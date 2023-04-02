@@ -4,7 +4,7 @@ import { useInView } from "react-intersection-observer";
 
 export default function About() {
   // Animations
-  const { ref: animationRef, inView: sectionIsVisible } = useInView();
+  const { ref: aboutSectionRef, inView: sectionIsVisible } = useInView();
   const [animation, setAnimation] = useState("");
   const [opacity, setOpacity] = useState(0);
   const [didAnimate, setDidAnimate] = useState(false);
@@ -30,7 +30,7 @@ export default function About() {
     <section id="section--about" className="about-content__wrapper">
       <div className="about-content__image"></div>
       <div
-        ref={animationRef}
+        ref={aboutSectionRef}
         className="section--about text-clr--secondary"
         style={{ animation: animation, opacity: opacity }}
       >

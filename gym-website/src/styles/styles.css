@@ -67,6 +67,26 @@
     opacity: 1;
   }
 }
+@-webkit-keyframes animate_plans {
+  from {
+    opacity: 0;
+    transform: translateX(-600px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+@keyframes animate_plans {
+  from {
+    opacity: 0;
+    transform: translateX(-600px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
 header {
   display: flex;
   justify-content: space-between;
@@ -674,6 +694,16 @@ footer p {
   to {
     transform: translateY(0);
     opacity: 1;
+  }
+}
+@keyframes animate_plans {
+  from {
+    opacity: 0;
+    transform: translateX(-600px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
   }
 }
 .main__scroll-button {
