@@ -55,12 +55,6 @@
   gap: 1.5rem;
 }
 
-@media (max-width: 1200px) {
-  .about-cards__wrapper {
-    grid-template-columns: minmax(250px, 500px);
-  }
-}
-
 .about-card {
   @include flexJustAlign(normal, center);
   flex-direction: column;
@@ -108,4 +102,18 @@
     font-size: 1.125em;
     font-weight: 600;
   }
+}
+
+// MediaQueries
+
+@media (max-width: 1200px) {
+  .about-cards__wrapper {
+    grid-template-columns: minmax(250px, 500px);
+  }
+}
+
+// Animations
+
+.section--about.animate {
+  animation: 1.5s animate_about;
 }

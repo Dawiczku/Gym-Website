@@ -1,11 +1,23 @@
-import React from "react";
 import { Link } from "react-scroll";
+import { useInView } from "react-intersection-observer";
 
 export default function About() {
+  // Animations
+  const { ref: animationRef, inView: sectionIsVisible } = useInView();
+
+  //
+
   return (
     <section id="section--about" className="about-content__wrapper">
       <div className="about-content__image"></div>
-      <div className="section--about text-clr--secondary">
+      <div
+        ref={animationRef}
+        className={
+          sectionIsVisible
+            ? "section--about text-clr--secondary animate"
+            : "section--about text-clr--secondary"
+        }
+      >
         <h2 className="text--upper font--slab">Who are we ?</h2>
 
         <div className="about-cards__wrapper">

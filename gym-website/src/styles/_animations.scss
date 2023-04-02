@@ -27,3 +27,15 @@
     transform: translateX(0);
   }
 }
+
+@keyframes animate_about {
+  from {
+    transform: translateY(300px);
+    opacity: 0;
+  }
+
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
