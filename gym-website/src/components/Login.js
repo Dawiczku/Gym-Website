@@ -6,6 +6,14 @@ export default function Login() {
     <>
       <section className="section--login section--form text-clr--primary bg-clr--form-section">
         <form className="login__form account__form clr-border--grey bg-clr--dark">
+          <NavLink to="/">
+            <button
+              className="home__button font--bold text-clr--primary"
+              type="button"
+            >
+              <span className="material-symbols-outlined">home</span>
+            </button>
+          </NavLink>
           <h1 className="font--bold accent--clr">Login !</h1>
           <input
             className="nickname__input text-clr--primary"

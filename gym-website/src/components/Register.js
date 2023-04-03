@@ -6,6 +6,14 @@ export default function Register() {
     <>
       <section className="section--register section--form text-clr--primary bg-clr--form-section">
         <form className="register__form account__form clr-border--grey bg-clr--dark">
+          <NavLink to="/">
+            <button
+              className="home__button font--bold text-clr--primary"
+              type="button"
+            >
+              <span className="material-symbols-outlined">home</span>
+            </button>
+          </NavLink>
           <h1 className="font--bold accent--clr">Register !</h1>
 
           <input
@@ -43,7 +51,9 @@ export default function Register() {
           ></input>
 
           <NavLink to="/login">
-            <p className="account-exist__form">Already have an account ?</p>
+            <p className="account-exist__form font--bold">
+              Already have an account ?
+            </p>
           </NavLink>
           <input
             className="register__button button--style-second text-clr--primary"

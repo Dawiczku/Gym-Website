@@ -9,6 +9,7 @@
 .account__form {
   @include flexJustAlign(space-around, center);
   flex-direction: column;
+  position: relative;
   gap: 2em;
   padding: 4em 3em;
   margin: 1em;
@@ -49,6 +50,29 @@
   p:hover {
     color: white;
   }
+}
+
+.home__button {
+  @include flexJustAlign(center, flex-end);
+  position: absolute;
+  top: 5px;
+  left: 5px;
+  border: none;
+  padding: 0.5em;
+  background-color: transparent;
+  cursor: pointer;
+
+  span {
+    font-size: clamp(2.5em, 4vw, 3.25em);
+  }
+}
+
+.home__button:hover {
+  color: white;
+}
+
+.home__button:active {
+  transform: scale(0.97);
 }
 
 .forgot-password__link,
