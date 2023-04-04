@@ -1,7 +1,8 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useRef } from "react";
 import { Link } from "react-scroll";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useInView } from "react-intersection-observer";
+import emailjs from "@emailjs/browser";
 
 export default function Contact() {
   // Animations
@@ -20,7 +21,6 @@ export default function Contact() {
 
   useEffect(() => {
     if (sectionIsVisible) {
-      console.log("now");
       setTimeout(() => {
         setHeadingAnimation(".75s animate_contact-heading");
         setHeadingOpacity(1);
@@ -35,6 +35,30 @@ export default function Contact() {
       }, 1250);
     }
   }, [sectionIsVisible]);
+
+  // Sending emails
+
+  const form = useRef();
+
+  const sendEmail = (e) => {
+    e.preventDefault();
+
+    emailjs
+      .sendForm(
+        process.env.REACT_APP_SERVICE_ID,
+        process.env.REACT_APP_TEMPLATE_ID,
+        form.current,
+        process.env.REACT_APP_PUBLIC_KEY
+      )
+      .then(
+        (result) => {
+          console.log(result.text);
+        },
+        (error) => {
+          console.log(error.text);
+        }
+      );
+  };
 
   return (
     <>
@@ -160,11 +184,14 @@ export default function Contact() {
           </div>
 
           <form
+            ref={form}
             className="contact-form"
             style={{
               animation: rightContentAnimation,
               opacity: rightContentOpacity,
             }}
+            autoComplete="off"
+            onSubmit={sendEmail}
           >
             <input
               type="text"
@@ -189,6 +216,7 @@ export default function Contact() {
               id="phone-number"
               placeholder="Phone (optional)"
               maxLength={9}
+              required
             ></input>
             <textarea
               name="message"
