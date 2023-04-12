@@ -699,7 +699,7 @@ footer p {
   flex-direction: column;
   position: relative;
   gap: 2em;
-  padding: 4em 3em;
+  padding: 2em 3em;
   margin: 1em;
   border: 2px solid rgb(100, 100, 100);
   box-shadow: 0 2px 15px 2px rgb(154, 205, 50);
@@ -710,6 +710,13 @@ footer p {
 }
 .account__form h1 {
   font-size: clamp(1.75em, 4vw, 2.5em);
+}
+.account__form .form__inputs {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 1em;
 }
 .account__form input[type=text],
 .account__form input[type=password],
@@ -761,6 +768,23 @@ footer p {
 .forgot-password__link,
 .account-exist__form {
   align-self: flex-start;
+}
+
+.register__button:disabled {
+  opacity: 0.5;
+  pointer-events: none;
+}
+
+.requirements {
+  background-color: rgb(10, 10, 10);
+  color: rgb(220, 220, 220);
+  border-radius: 10px;
+  padding: 0.5em;
+  text-align: center;
+}
+
+.icon--info {
+  padding: 0 0.25em;
 }
 
 @media (max-width: 600px) {
@@ -1035,4 +1059,8 @@ h6 {
 a {
   text-decoration: none;
   color: inherit;
+}
+
+.hidden {
+  display: none;
 }/*# sourceMappingURL=styles.css.map */

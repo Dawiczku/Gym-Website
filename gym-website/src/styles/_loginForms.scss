@@ -11,7 +11,7 @@
   flex-direction: column;
   position: relative;
   gap: 2em;
-  padding: 4em 3em;
+  padding: 2em 3em;
   margin: 1em;
   border: 2px solid $clr-border--grey;
   box-shadow: 0 2px 15px 2px $clr--accent;
@@ -23,6 +23,12 @@
 
   h1 {
     font-size: clamp(1.75em, 4vw, 2.5em);
+  }
+
+  .form__inputs {
+    @include flexJustAlign(center, center);
+    flex-direction: column;
+    gap: 1em;
   }
 
   input[type="text"],
@@ -78,6 +84,23 @@
 .forgot-password__link,
 .account-exist__form {
   align-self: flex-start;
+}
+
+.register__button:disabled {
+  opacity: 0.5;
+  pointer-events: none;
+}
+
+.requirements {
+  background-color: rgb(10, 10, 10);
+  color: $clr-text--primary;
+  border-radius: 10px;
+  padding: 0.5em;
+  text-align: center;
+}
+
+.icon--info {
+  padding: 0 0.25em;
 }
 
 // MediaQueries
