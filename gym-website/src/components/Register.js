@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useRef } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { NavLink } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
+import axios from "axios";
 
 export default function Register() {
   const USER_REGEX = /^[A-z][A-z0-9-_]{3,15}$/;
@@ -10,6 +11,8 @@ export default function Register() {
 
   const userRef = useRef();
   const errRef = useRef();
+
+  const navigate = useNavigate();
 
   const [userName, setUserName] = useState("");
   const [validUserName, setValidUserName] = useState(false);
@@ -28,7 +31,7 @@ export default function Register() {
   const [emailFocus, setEmailFocus] = useState(false);
 
   const [success, setSuccess] = useState(false);
-  const [err, setErr] = useState("");
+  const [err, setErr] = useState(false);
 
   useEffect(() => {
     userRef.current.focus();
@@ -55,6 +58,13 @@ export default function Register() {
     setErr("");
   }, [userName, password, email]);
 
+  useEffect(() => {
+    if (!success) return;
+    setTimeout(() => {
+      navigate("/login");
+    }, 2000);
+  }, [success]);
+
   const handleSubmit = (e) => {
     e.preventDefault();
 
@@ -66,13 +76,33 @@ export default function Register() {
       setErr("Invalid data! Try again.");
       return;
     }
-    setSuccess(true);
+
+    axios
+      .post(`${process.env.REACT_APP_SERVER_URL}/register`, {
+        userName: userName,
+        password: password,
+        email: email,
+      })
+      .then((response) => {
+        if (!response.data.errMessage) {
+          setSuccess(response.data.message);
+        } else {
+          setErr(response.data.errMessage);
+          setSuccess(false);
+        }
+      })
+      .catch((error) => {
+        console.error(error);
+      });
   };
 
   return (
     <>
       <section className="section--register section--form text-clr--primary bg-clr--form-section">
-        <form className="register__form account__form clr-border--grey bg-clr--dark">
+        <form
+          onSubmit={handleSubmit}
+          className="register__form account__form clr-border--grey bg-clr--dark"
+        >
           <NavLink to="/">
             <button
               className="home__button font--bold text-clr--primary"
@@ -82,6 +112,11 @@ export default function Register() {
             </button>
           </NavLink>
           <h1 className="font--bold accent--clr">Register !</h1>
+          {success ? (
+            <p className="register--success">{success}</p>
+          ) : err ? (
+            <p className="register--fail">{err}.</p>
+          ) : null}
 
           <div className="form__inputs">
             <input
@@ -89,6 +124,7 @@ export default function Register() {
               ref={userRef}
               type="text"
               name="nickname"
+              autoComplete="off"
               onFocus={() => setUserNameFocus(true)}
               onBlur={() => setUserNameFocus(false)}
               onChange={(e) => setUserName(e.target.value)}

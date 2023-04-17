@@ -711,6 +711,16 @@ footer p {
 .account__form h1 {
   font-size: clamp(1.75em, 4vw, 2.5em);
 }
+.account__form .register--success, .account__form .register--fail {
+  background-color: rgb(154, 205, 50);
+  color: rgb(220, 220, 220);
+  padding: 1em 2em;
+  border: 2px solid rgb(10, 10, 10);
+  border-radius: 15px;
+}
+.account__form .register--fail {
+  background: firebrick;
+}
 .account__form .form__inputs {
   display: flex;
   justify-content: center;
