@@ -89,7 +89,7 @@ export default function Contact() {
               </span>
               <div className="location--info">
                 <p className="font--bold accent--clr info__heading">
-                  We're at:
+                  We are at:
                 </p>
                 <p>POWER GYM, ul. Podgorna 65</p>
                 <p>65-246, Zielona Gora</p>
