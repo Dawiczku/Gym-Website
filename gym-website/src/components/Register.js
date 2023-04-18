@@ -10,7 +10,6 @@ export default function Register() {
   const EMAIL_REGEX = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
 
   const userRef = useRef();
-  const errRef = useRef();
 
   const navigate = useNavigate();
 
@@ -113,9 +112,9 @@ export default function Register() {
           </NavLink>
           <h1 className="font--bold accent--clr">Register !</h1>
           {success ? (
-            <p className="register--success">{success}</p>
+            <p className="form--success">{success}</p>
           ) : err ? (
-            <p className="register--fail">{err}.</p>
+            <p className="form--fail">{err}.</p>
           ) : null}
 
           <div className="form__inputs">

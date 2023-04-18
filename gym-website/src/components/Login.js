@@ -1,11 +1,57 @@
-import React from "react";
-import { NavLink } from "react-router-dom";
+import React, { useEffect, useState, useRef } from "react";
+import { NavLink, useNavigate } from "react-router-dom";
+import axios from "axios";
 
 export default function Login() {
+  const userRef = useRef();
+  const navigate = useNavigate();
+
+  const [userName, setUserName] = useState("");
+  const [password, setPassword] = useState("");
+  const [success, setSuccess] = useState(false);
+  const [successMessage, setSuccessMessage] = useState("");
+  const [errMessage, setErrMessage] = useState("");
+
+  useEffect(() => {
+    userRef.current.focus();
+  }, []);
+
+  useEffect(() => {
+    if (!success) return;
+    setTimeout(() => {
+      navigate("/");
+    }, 2000);
+  }, [success]);
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    axios
+      .post(`${process.env.REACT_APP_SERVER_URL}/login`, {
+        userName: userName,
+        password: password,
+      })
+      .then((response) => {
+        if (response.data.errMessage) {
+          setErrMessage(response.data.errMessage);
+          setSuccess(false);
+        } else {
+          setSuccessMessage(response.data.message);
+          setSuccess(true);
+        }
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  };
+
   return (
     <>
       <section className="section--login section--form text-clr--primary bg-clr--form-section">
-        <form className="login__form account__form clr-border--grey bg-clr--dark">
+        <form
+          onSubmit={handleSubmit}
+          className="login__form account__form clr-border--grey bg-clr--dark"
+        >
           <NavLink to="/">
             <button
               className="home__button font--bold text-clr--primary"
@@ -15,7 +61,14 @@ export default function Login() {
             </button>
           </NavLink>
           <h1 className="font--bold accent--clr">Login !</h1>
+          {success ? (
+            <p className="form--success">{successMessage}</p>
+          ) : errMessage ? (
+            <p className="form--fail">{errMessage}.</p>
+          ) : null}
           <input
+            ref={userRef}
+            onChange={(e) => setUserName(e.target.value)}
             className="nickname__input text-clr--primary"
             type="text"
             name="nickname"
@@ -24,6 +77,7 @@ export default function Login() {
             required
           ></input>
           <input
+            onChange={(e) => setPassword(e.target.value)}
             className="password__input text-clr--primary"
             type="password"
             name="password"

@@ -25,7 +25,7 @@
     font-size: clamp(1.75em, 4vw, 2.5em);
   }
 
-  .register--success {
+  .form--success {
     background-color: $clr--accent;
     color: $clr-text--primary;
     padding: 1em 2em;
@@ -33,8 +33,8 @@
     border-radius: 15px;
   }
 
-  .register--fail {
-    @extend .register--success;
+  .form--fail {
+    @extend .form--success;
     background: firebrick;
   }
 
