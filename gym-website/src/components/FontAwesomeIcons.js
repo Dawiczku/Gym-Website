@@ -6,6 +6,13 @@ import {
   faGithub,
 } from "@fortawesome/free-brands-svg-icons";
 
-import { faCircleInfo } from "@fortawesome/free-solid-svg-icons";
+import { faCircleInfo, faUser } from "@fortawesome/free-solid-svg-icons";
 
-library.add(faFacebookF, faInstagram, faYoutube, faGithub, faCircleInfo);
+library.add(
+  faFacebookF,
+  faInstagram,
+  faYoutube,
+  faGithub,
+  faCircleInfo,
+  faUser
+);
