@@ -16,13 +16,6 @@ export default function Login() {
     userRef.current.focus();
   }, []);
 
-  useEffect(() => {
-    if (!success) return;
-    setTimeout(() => {
-      navigate("/");
-    }, 2000);
-  }, [success]);
-
   const handleSubmit = (e) => {
     e.preventDefault();
 
@@ -32,12 +25,16 @@ export default function Login() {
         password: password,
       })
       .then((response) => {
+        const userData = response.data.userData;
         if (response.data.errMessage) {
           setErrMessage(response.data.errMessage);
           setSuccess(false);
         } else {
           setSuccessMessage(response.data.message);
           setSuccess(true);
+          setTimeout(() => {
+            navigate("/dashboard", { state: userData });
+          }, 2000);
         }
       })
       .catch((error) => {

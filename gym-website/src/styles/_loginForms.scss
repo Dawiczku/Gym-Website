@@ -41,7 +41,7 @@
   .form__inputs {
     @include flexJustAlign(center, center);
     flex-direction: column;
-    gap: 1em;
+    gap: 0.25em;
   }
 
   input[type="text"],

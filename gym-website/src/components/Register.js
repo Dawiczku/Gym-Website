@@ -13,6 +13,9 @@ export default function Register() {
 
   const navigate = useNavigate();
 
+  const [firstName, setFirstName] = useState("");
+  const [lastName, setLastName] = useState("");
+  const [phoneNumber, setPhoneNumber] = useState("");
   const [userName, setUserName] = useState("");
   const [validUserName, setValidUserName] = useState(false);
   const [userNameFocus, setUserNameFocus] = useState(false);
@@ -79,6 +82,9 @@ export default function Register() {
     axios
       .post(`${process.env.REACT_APP_SERVER_URL}/register`, {
         userName: userName,
+        firstName: firstName,
+        lastName: lastName,
+        phone: phoneNumber,
         password: password,
         email: email,
       })
@@ -147,7 +153,36 @@ export default function Register() {
               </p>
               <p>Numbers and 3-23 characters allowed.</p>
             </div>
-
+            <input
+              className="firstName__input text-clr--primary"
+              type="text"
+              name="firstName"
+              autoComplete="off"
+              onChange={(e) => setFirstName(e.target.value)}
+              placeholder="First Name"
+              maxLength={30}
+              required
+            ></input>
+            <input
+              className="lastName__input text-clr--primary"
+              type="text"
+              name="lastName"
+              autoComplete="off"
+              onChange={(e) => setLastName(e.target.value)}
+              placeholder="Last Name"
+              maxLength={30}
+              required
+            ></input>
+            <input
+              className="phone__input text-clr--primary"
+              type="text"
+              name="phone"
+              autoComplete="off"
+              onChange={(e) => setPhoneNumber(e.target.value)}
+              placeholder="Phone Number"
+              maxLength={9}
+              required
+            ></input>
             <input
               className="email__input text-clr--primary"
               type="email"

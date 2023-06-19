@@ -1,8 +1,12 @@
+/* eslint-disable react/prop-types */
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import React from "react";
 
 export default function Dashboard() {
+  const location = useLocation();
+  console.log(location);
+  const { userName, userFirstName, userLastName, userPhone } = location.state;
   return (
     <section className="bg-clr--dark">
       <header>
@@ -27,13 +31,16 @@ export default function Dashboard() {
       <div className="dashboard__content">
         <div>
           <p className="accent--clr">
-            Name: <span className="text-clr--primary">Bartosz</span>
+            NickName: <span className="text-clr--primary">{userName}</span>
           </p>
           <p className="accent--clr">
-            Last Name: <span className="text-clr--primary">Kurek</span>
+            Name: <span className="text-clr--primary">{userFirstName}</span>
           </p>
           <p className="accent--clr">
-            Phone Number: <span className="text-clr--primary">123 456 789</span>
+            Last Name: <span className="text-clr--primary">{userLastName}</span>
+          </p>
+          <p className="accent--clr">
+            Phone Number: <span className="text-clr--primary">{userPhone}</span>
           </p>
           <p className="accent--clr">
             Your plan: <span className="text-clr--primary">None</span>

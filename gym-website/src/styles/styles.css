@@ -726,7 +726,7 @@ footer p {
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  gap: 1em;
+  gap: 0.25em;
 }
 .account__form input[type=text],
 .account__form input[type=password],
